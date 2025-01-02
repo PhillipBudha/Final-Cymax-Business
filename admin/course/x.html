@@ -1,0 +1,292 @@
+<?php
+session_start();
+
+// Check if the user is already logged in
+if (!isset($_SESSION["loggedIn"]) || $_SESSION["loggedIn"] !== true) {
+    header("Location: login.php");
+    exit;
+}
+
+require_once "config.php";
+require_once "validation.php";
+require_once "head.php";
+
+$course_name = $category = $instructor = $department = $rating = $reviews =/*  $duration = */ $lessons = $price = $image = "";
+$course_name_err = $category_err = $instructor_err = $department_err = $rating_err = $reviews_err /*=  $duration_err  */= $lessons_err = $price_err = $image_err = "";
+
+// Processing form data when form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Validate and sanitize inputs
+    $course_name = isset($_POST["course_name"]) ? test_input($_POST["course_name"]) : "";
+    $category = isset($_POST["category"]) ? test_input($_POST["category"]) : "";
+    $instructor = isset($_POST["instructor"]) ? test_input($_POST["instructor"]) : "";
+    $department = isset($_POST["department"]) ? test_input($_POST["department"]) : "";
+    $rating = isset($_POST["rating"]) ? test_input($_POST["rating"]) : "";
+    $reviews = isset($_POST["reviews"]) ? test_input($_POST["reviews"]) : "";
+  /*   $duration = isset($_POST["duration"]) ? test_input($_POST["duration"]) : ""; */
+    $lessons = isset($_POST["lessons"]) ? test_input($_POST["lessons"]) : "";
+    $price = isset($_POST["price"]) ? test_input($_POST["price"]) : "";
+    $image = isset($_POST["image"]) ? test_input($_POST["image"]) : "";
+
+    // Validation
+    if (empty($course_name)) {
+        $course_name_err = "* Course name is required";
+    } elseif (!preg_match("/^[a-zA-Z ]*$/", $course_name)) {
+        $course_name_err = "Only letters and spaces are allowed";
+    }
+
+ /*    if (empty($duration)) {
+        $duration_err = "* Duration is required";
+    } elseif (!is_numeric($duration) || $duration <= 0) {
+        $duration_err = "Duration must be a valid positive number (e.g., 3.5)";
+    }
+     */
+
+    if (empty($instructor)) {
+        $instructor_err = "* Instructor name is required";
+    } elseif (!preg_match("/^[a-zA-Z\s]+$/", $instructor)) {
+        $instructor_err = "Only letters and spaces allowed for instructor name";
+    }
+
+    if (empty($department)) {
+        $department_err = "* Department is required";
+    } elseif (!preg_match("/^[a-zA-Z\s]+$/", $department)) {
+        $department_err = "Only letters and spaces allowed for department";
+    }
+
+    if (empty($rating)) {
+        $rating_err = "* Rating is required";
+    } elseif (!is_numeric($rating) || $rating < 0 || $rating > 5) {
+        $rating_err = "Rating must be a numeric value between 0 and 5";
+    }
+
+    if (empty($reviews)) {
+        $reviews_err = "* Reviews count is required";
+    } elseif (!ctype_digit($reviews)) {
+        $reviews_err = "Reviews must be a numeric value";
+    }
+
+    if (empty($duration)) {
+        $duration_err = "* Duration is required";
+    } elseif (!preg_match("/^\d+(\.\d{1,2})?$/", $duration)) {
+        $duration_err = "Duration must be a valid number (e.g., 3.5)";
+    }
+
+    if (empty($lessons)) {
+        $lessons_err = "* Number of lessons is required";
+    } elseif (!ctype_digit($lessons)) {
+        $lessons_err = "Lessons must be a whole number";
+    }
+
+    if (empty($price)) {
+        $price_err = "* Price is required";
+    } elseif (!preg_match("/^\d+(\.\d{1,2})?$/", $price)) {
+        $price_err = "Price must be a valid number (e.g., 100.00)";
+    }
+
+    if (empty($image)) {
+        $image_err = "* Image URL or path is required";
+    } elseif (!filter_var($image, FILTER_VALIDATE_URL) && !preg_match("/^[a-zA-Z0-9_\-\/\.]+\.(jpg|jpeg|png|gif)$/i", $image)) {
+        $image_err = "Image must be a valid URL or a file path ending with .jpg, .jpeg, .png, or .gif";
+    }
+
+    // Check for errors
+    if (empty($course_name_err) && empty($category_err) && empty($instructor_err) && empty($department_err) &&
+        empty($rating_err) && empty($reviews_err) && empty($duration_err) && empty($lessons_err) && 
+        empty($price_err) && empty($image_err)) {
+
+        // Prepare SQL statement
+        $sql = "INSERT INTO courses (name, user_id, category, instructor, department, rating, reviews, /* duration, */ lessons, price, image) 
+                VALUES (:name, :user_id, :category, :instructor, :department, :rating, :reviews, /* :duration, */ :lessons, :price, :image)";
+
+        if ($stmt = $pdo->prepare($sql)) {
+            $stmt->bindParam(":name", $course_name);
+            $stmt->bindParam(":user_id", $_SESSION["id"]);
+            $stmt->bindParam(":category", $category);
+            $stmt->bindParam(":instructor", $instructor);
+            $stmt->bindParam(":department", $department);
+            $stmt->bindParam(":rating", $rating);
+            $stmt->bindParam(":reviews", $reviews);
+           /*  $stmt->bindParam(":duration", $duration); */
+            $stmt->bindParam(":lessons", $lessons);
+            $stmt->bindParam(":price", $price);
+            $stmt->bindParam(":image", $image);
+
+            if ($stmt->execute()) {
+                echo "<div class='alert alert-success'>Course added successfully.</div>";
+                header("location: dashboard.php");
+                exit();
+            } else {
+                echo "<div class='alert alert-danger'>Something went wrong. Please try again later.</div>";
+            }
+         
+        }
+        unset($stmt);
+    }
+    unset($pdo);
+}
+?>
+
+<html>
+<!-- <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Course</title>
+    <!-- Include Bootstrap CSS --
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head> -->
+
+<body>
+    <div class="container mt-5">
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="page-header text-center mb-4">
+                        <h1>Create Course</h1>
+                    </div>
+                    <form action="<?php echo htmlspecialchars($_SERVER[" PHP_SELF"]); ?>" method="POST">
+
+                        <div class="form-group mb-3">
+                            <!--  <label for="course_name">Course Name</label> -->
+                            <input type="text" class="form-control" id="course_name" name="course_name"
+                                placeholder="Course name">
+                            <span class="error text-danger">
+                                <?php echo $course_name_err; ?>
+                            </span>
+                        </div>
+                        <div class="form-group mb-3">
+                            <!-- <label for="category">Category</label> -->
+                            <input type="text" class="form-control" id="category" name="category"
+                                placeholder="Category">
+                            <span class="error text-danger">
+                                <?php echo $category_err; ?>
+                            </span>
+                        </div>
+                        <div class="form-group mb-3">
+                            <!--  <label for="instructor">Instructor</label> -->
+                            <input type="text" class="form-control" id="instructor" name="instructor"
+                                placeholder="Instructor">
+                            <span class="error text-danger">
+                                <?php echo $instructor_err; ?>
+                            </span>
+                        </div>
+                        <div class="form-group mb-3">
+                            <!-- <label for="department">Department</label> -->
+                            <input type="text" class="form-control" id="department" name="department"
+                                placeholder="Department">
+                            <span class="error text-danger">
+                                <?php echo $department_err; ?>
+                            </span>
+                        </div>
+                        <div class="form-group mb-3">
+                            <!-- <label for="rating">Rating</label> -->
+                            <input type="text" class="form-control" id="rating" name="rating" placeholder="Ratings">
+                            <span class="error text-danger">
+                                <?php echo $rating_err; ?>
+                            </span>
+                        </div>
+                        <div class="form-group mb-3">
+                            <!--   <label for="reviews">Reviews</label> -->
+                            <input type="text" class="form-control" id="reviews" name="reviews" placeholder="Reviews">
+                            <span class="error text-danger">
+                                <?php echo $reviews_err; ?>
+                            </span>
+                        </div>
+                        <!-- <div class="form-group">
+                        <label for="duration">Duration</label>
+                        <input type="text" class="form-control" id="duration" name="duration" placeholder="Duration in hours (e.g., 3.5)">
+                        <span class="error text-danger"><?php echo $duration_err; ?></span>
+                        </div> -->
+
+
+                        <div class="form-group mb-3">
+                            <!--     <label for="lessons">Lessons</label> -->
+                            <input type="text" class="form-control" id="lessons" name="lessons" placeholder="Lessons">
+                            <span class="error text-danger">
+                                <?php echo $lessons_err; ?>
+                            </span>
+                        </div>
+                        <div class="form-group mb-3">
+                            <!--  <label for="price">Price</label> -->
+                            <input type="text" class="form-control" id="price" name="price" placeholder="Price">
+                            <span class="error text-danger">
+                                <?php echo $price_err; ?>
+                            </span>
+                        </div>
+                        <div class="form-group mb-3">
+                            <!--    <label for="image">Image</label> -->
+                            <input type="text" class="form-control" id="image" name="image" placeholder="Image">
+                            <span class="error text-danger">
+                                <?php echo $image_err; ?>
+                            </span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <button type="submit" name="submit" class="btn btn-success rounded-pill w-50">Add</button>
+                            <a href="dashboard.php" role="button" class="btn btn-danger rounded-pill w-50">Back</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Include Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <?php
+            // Include config file
+            require_once "config.php";
+            
+            // Attempt select query execution
+            $sql = "SELECT * FROM courses WHERE user_id = :user_id";
+            
+            if($stmt = $pdo->prepare($sql))
+            {
+                // Bind variables to the prepared statement as parameters
+                $stmt->bindParam(":user_id", $param_user_id);
+        
+                // Set parameters
+                $param_user_id = $_SESSION["id"];
+
+                if($stmt->execute())
+                {
+                    if($stmt->rowCount() > 0)
+                    {
+                        echo "<table class='table table-bordered table-striped'>";
+                            echo "<thead>";
+                                echo "<tr>";
+                                    echo "<th>Course name</th>";
+                                    echo "<th>Action</th>";
+                                echo "</tr>";
+                            echo "</thead>";
+                            echo "<tbody>";
+                            while($row = $stmt->fetch()){
+                                echo "<tr>";
+                                    echo "<td>" . $row['name'] . "</td>";
+                                    echo "<td>";
+                                    echo "<a href='read.php?id=". $row['id'] ."' title='View Record' data-toggle='tooltip' class='btn btn-default'><i class='fas fa-eye'></i></a>";
+                                    echo "<a href='update.php?id=". $row['id'] ."' title='Update Record' data-toggle='tooltip' class='btn btn-default'><i class='fas fa-pencil-alt'></i></a>";
+                                    echo "<a href='delete.php?id=". $row['id'] ."' title='Delete Record' data-toggle='tooltip' class='btn btn-default'><i class='fas fa-trash'></i></a>";
+                                    echo "</td>";
+
+                                echo "</tr>";
+                            }
+                            echo "</tbody>";                            
+                        echo "</table>";
+                        // Free result set
+                        unset($stmt);
+                    } else{
+                        echo "<p class='lead'><em>No courses were found.</em></p>";
+                    }
+                } else{
+                    echo "ERROR: Could not able to execute $sql. " . $mysqli->error;
+                }
+                
+                // Close connection
+                unset($pdo);
+            }
+            ?>
+
+</body>
+
+</html>

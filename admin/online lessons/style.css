@@ -1,0 +1,16 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 800px;
+}
+
+table th,
+table td {
+  text-align: center;
+}
+
+video {
+  max-width: 100%;
+}

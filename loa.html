@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment Upload</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .upload-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .upload-container h2 {
+            text-align: center;
+        }
+
+        .file-list {
+            margin-top: 10px;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .file-list li {
+            margin-bottom: 5px;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="upload-container">
+        <h2>Upload Assignments</h2>
+        <form id="assignment-form" enctype="multipart/form-data">
+            <label for="files">Select up to 10 documents:</label><br>
+            <input type="file" id="files" name="files" accept=".pdf, .docx" multiple><br>
+            <ul class="file-list" id="file-list"></ul>
+            <p class="error" id="error-message"></p>
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+
+    <script>
+        const fileInput = document.getElementById('files');
+        const fileList = document.getElementById('file-list');
+        const errorMessage = document.getElementById('error-message');
+        const maxFiles = 10;
+
+        fileInput.addEventListener('change', () => {
+            fileList.innerHTML = '';
+            errorMessage.textContent = '';
+
+            const files = fileInput.files;
+
+            if (files.length > maxFiles) {
+                errorMessage.textContent = `You can only upload up to ${maxFiles} documents.`;
+                fileInput.value = ''; // Clear selected files
+                return;
+            }
+
+            Array.from(files).forEach((file, index) => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${index + 1}. ${file.name}`;
+                fileList.appendChild(listItem);
+            });
+        });
+
+        const form = document.getElementById('assignment-form');
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch('http://localhost:3000/upload-assignments', {
+                    method: 'POST',
+                    body: formData,
+                });
+
+                if (response.ok) {
+                    alert('Assignments uploaded successfully!');
+                    fileInput.value = ''; // Clear input
+                    fileList.innerHTML = ''; // Clear list
+                } else {
+                    alert('Failed to upload assignments.');
+                }
+            } catch (error) {
+                console.error('Error uploading files:', error);
+                alert('Error uploading assignments.');
+            }
+        });
+    </script>
+</body>
+
+</html>

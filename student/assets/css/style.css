@@ -1,0 +1,136 @@
+:root {
+  --cisco-blue: #049fd9;
+  --notification-gradient: linear-gradient(90deg, #004d40 0%, #00796b 100%);
+}
+
+.notification-banner {
+  background: var(--notification-gradient);
+  color: white;
+  padding: 1rem;
+}
+
+.navbar {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 0.5rem 1rem;
+}
+
+.search-bar {
+  max-width: 400px;
+  position: relative;
+}
+
+.search-bar .form-control {
+  padding-left: 2.5rem;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+}
+
+.search-bar .bi-search {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+}
+
+.course-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.course-card:hover {
+  transform: translateY(-2px);
+}
+
+.course-thumbnail {
+  position: relative;
+  padding-top: 56.25%;
+  background-size: cover;
+  background-position: center;
+}
+
+.course-level {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.level-beginner {
+  background-color: #4caf50;
+  color: white;
+}
+
+.level-intermediate {
+  background-color: #ff9800;
+  color: white;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.course-info {
+  padding: 1rem;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-top: none;
+}
+
+.provider-logo {
+  height: 24px;
+  width: auto;
+}
+
+.sidebar {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  height: calc(100vh - 120px);
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  color: #333;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.sidebar-link:hover {
+  background-color: #e9ecef;
+}
+
+.sidebar-link.active {
+  background-color: #e9ecef;
+  font-weight: 500;
+}
+
+.logout-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 0.375rem 1rem;
+  border-radius: 4px;
+}
+
+.full-image {
+  width: 100%;
+  height: 80%;
+  object-fit: fill;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rich Text Editor</title>
+    <!-- Quill.js Styles -->
+    <link href="https://cdn.quilljs.com/1.3.7/quill.snow.css" rel="stylesheet">
+    <style>
+        #editor-container {
+            height: 300px;
+        }
+
+        .upload-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Write Your Story</h1>
+    <div id="toolbar">
+        <!-- Quill Toolbar Options -->
+    </div>
+    <div id="editor-container"></div>
+    <div class="upload-container">
+        <label for="file-upload">Upload Document:</label>
+        <input type="file" id="file-upload" accept=".pdf, .docx">
+    </div>
+    <button onclick="saveStory()">Save Story</button>
+
+    <!-- Quill.js Script -->
+    <script src="https://cdn.quilljs.com/1.3.7/quill.min.js"></script>
+    <script>
+        const quill = new Quill('#editor-container', {
+            theme: 'snow',
+            modules: {
+                toolbar: [
+                    [{ font: [] }, { size: [] }],
+                    ['bold', 'italic', 'underline', 'strike'],
+                    [{ color: [] }, { background: [] }],
+                    [{ align: [] }],
+                    ['clean']
+                ]
+            },
+            placeholder: 'Write your story here...'
+        });
+
+        function saveStory() {
+            const storyContent = quill.root.innerHTML;
+            console.log('Story Content:', storyContent);
+            // Add functionality to send this content to the backend.
+        }
+    </script>
+</body>
+
+</html>

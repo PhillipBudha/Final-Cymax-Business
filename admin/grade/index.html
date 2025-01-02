@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCNA: Introduction to Networks (071224) - Gradebook</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        .section-header {
+            cursor: pointer;
+        }
+
+        .chevron-icon::after {
+            content: "\F282";
+            font-family: "bootstrap-icons";
+            float: right;
+        }
+
+        .section-header.collapsed .chevron-icon::after {
+            content: "\F286";
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+    <header class="bg-white shadow-sm">
+        <div class="container py-3">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center">
+                    <img src="/placeholder.svg?height=40&width=40" alt="Logo" class="me-3"
+                        style="height: 40px; width: 40px;">
+                    <h1 class="h4 mb-0">CCNA: Introduction to Networks (071224)</h1>
+                </div>
+                <button class="btn btn-light rounded-circle">
+                    <i class="bi bi-bell"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container my-4">
+        <div class="row g-4">
+            <div class="col-lg-8">
+                <!-- Student Info -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div class="bg-secondary rounded-circle me-3" style="width: 48px; height: 48px;"></div>
+                            <div>
+                                <h2 class="h5 mb-0">Student Name</h2>
+                                <p class="text-muted small mb-0">student@example.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module Group Exams -->
+                <div class="card mb-4">
+                    <div class="card-header section-header" data-bs-toggle="collapse"
+                        data-bs-target="#moduleGroupExams">
+                        <h3 class="h5 mb-0">
+                            Module Group Exams
+                            <span class="chevron-icon"></span>
+                        </h3>
+                    </div>
+                    <div id="moduleGroupExams" class="collapse show">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Exam Name</th>
+                                            <th>Submission Date</th>
+                                            <th>Attempts</th>
+                                            <th>Points</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Basic Network Connectivity Exam</td>
+                                            <td>--</td>
+                                            <td>--</td>
+                                            <td>--/100</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ethernet Concepts Exam</td>
+                                            <td>--</td>
+                                            <td>--</td>
+                                            <td>--/100</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Communicating Between Networks Exam</td>
+                                            <td>--</td>
+                                            <td>--</td>
+                                            <td>--/100</td>
+                                        </tr>
+                                        <tr>
+                                            <td>IP Addressing Exam</td>
+                                            <td>--</td>
+                                            <td>--</td>
+                                            <td>--/100</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Network Application Communications Exam</td>
+                                            <td>--</td>
+                                            <td>--</td>
+                                            <td>--/100</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Building and Securing a Small Network Exam</td>
+                                            <td>--</td>
+                                            <td>--</td>
+                                            <td>--/100</td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr class="fw-bold">
+                                            <td colspan="3">Module Group Exams Average</td>
+                                            <td>0/600 (0%)</td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Final Exam -->
+                <div class="card mb-4">
+                    <div class="card-header section-header" data-bs-toggle="collapse" data-bs-target="#finalExam">
+                        <h3 class="h5 mb-0">
+                            Final Exam
+                            <span class="chevron-icon"></span>
+                        </h3>
+                    </div>
+                    <div id="finalExam" class="collapse show">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td>CCNA: Introduction to Networks Course Final Exam</td>
+                                            <td>--</td>
+                                            <td>--</td>
+                                            <td>--/100</td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr class="fw-bold">
+                                            <td colspan="3">Final Exam Average</td>
+                                            <td>0/100 (0%)</td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Practice Exams -->
+                <div class="card mb-4">
+                    <div class="card-header section-header" data-bs-toggle="collapse" data-bs-target="#practiceExams">
+                        <h3 class="h5 mb-0">
+                            Practice Exams
+                            <span class="chevron-icon"></span>
+                        </h3>
+                    </div>
+                    <div id="practiceExams" class="collapse show">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td>ITN Practice PT Skills Assessment (PTSA)</td>
+                                            <td>--</td>
+                                            <td>--</td>
+                                            <td>--/100</td>
+                                        </tr>
+                                        <tr>
+                                            <td>CCNA: Introduction to Networks Practice Final Exam</td>
+                                            <td>--</td>
+                                            <td>--</td>
+                                            <td>--/100</td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr class="fw-bold">
+                                            <td colspan="3">Practice Exams Average</td>
+                                            <td>0/200 (0%)</td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills Exams -->
+                <div class="card mb-4">
+                    <div class="card-header section-header" data-bs-toggle="collapse" data-bs-target="#skillsExams">
+                        <h3 class="h5 mb-0">
+                            Skills Exams
+                            <span class="chevron-icon"></span>
+                        </h3>
+                    </div>
+                    <div id="skillsExams" class="collapse show">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td>ITN Final Skills Exam (PTSA)</td>
+                                            <td>--</td>
+                                            <td>--</td>
+                                            <td>--/100</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ITN Final Skills Exam (Equipment)</td>
+                                            <td>--</td>
+                                            <td>--</td>
+                                            <td>--/100</td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr class="fw-bold">
+                                            <td colspan="3">Skills Exams Average</td>
+                                            <td>0/200 (0%)</td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Announcements Sidebar -->
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="h5 mb-4">Announcements</h3>
+                        <div class="text-center py-5">
+                            <img src="/placeholder.svg?height=120&width=120" alt="No announcements" class="mb-3"
+                                style="height: 120px; width: 120px;">
+                            <p class="h5">No Announcements</p>
+                            <p class="text-muted">Latest announcements will appear here.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

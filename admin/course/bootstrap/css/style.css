@@ -1,0 +1,109 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+a {
+  text-decoration: none;
+}
+.jumbotron {
+  background: url("../img/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.jumbotron::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Dark overlay for better text visibility */
+  filter: blur(10px);
+  z-index: 1;
+}
+
+.jumbotron .container {
+  z-index: 2; /* Ensures content appears above the blur overlay */
+  text-align: center;
+  color: white;
+}
+
+.btn {
+  margin: 10px;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  background-color: #f4f4f9;
+}
+
+.signup-card {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.form-label {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.btn-primary {
+  background-color: #5a67d8;
+  border-color: #5a67d8;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #4c51bf;
+  border-color: #4c51bf;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #ddd;
+}
+
+.divider:not(:empty)::before {
+  margin-right: 0.5em;
+}
+
+.divider:not(:empty)::after {
+  margin-left: 0.5em;
+}
+
+.auth-buttons .btn {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: #000;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+}

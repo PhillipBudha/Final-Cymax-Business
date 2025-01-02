@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confluent Academy</title>
+    <!-- bootsrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- font awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #4e54c8, #8f94fb);
+            min-height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <!--**************************************************************************************************************
+    # Navigation
+    **************************************************************************************************************-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="/placeholder.svg?height=40&width=40" alt="Study Logo" class="me-2">
+                Confluent Academy
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Courses</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="portalDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Portal
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="portalDropdown">
+                            <li><a class="dropdown-item" href="#">Student Login</a></li>
+                            <li><a class="dropdown-item" href="#">Staff Login</a></li>
+                            <li><a class="dropdown-item" href="#">Administrator Login</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="programsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Library
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="programsDropdown">
+                            <li><a class="dropdown-item" href="#">E-Resources</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+
+                            <li><a class="dropdown-item" href="#">Library Services</a></li>
+                            <li><a class="dropdown-item" href="#">Library Info</a></li>
+                            <li><a class="dropdown-item" href="#">Catalogue</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">News & Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section>
+        <div class="container mt-5">
+            <h1 class="mb-4 text-white">Welcome to Our Course Library</h1>
+            <h2 class="mb-4 text-white">All Courses</h2>
+            <p class="text-white mb-4">Courses that help beginner designers become true unicorns.</p>
+
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <button class="btn btn-primary me-2">All Course</button>
+                    <button class="btn btn-outline-light me-2">Featured</button>
+                    <button class="btn btn-outline-light me-2">Popular</button>
+                    <button class="btn btn-outline-light me-2">Trending</button>
+                    <button class="btn btn-outline-light">Latest</button>
+                </div>
+                <div class="search-input">
+                    <input type="text" class="form-control" placeholder="Search Your Course">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="assets/img/cgiz/Business Accounting.jpg" class="card-img-top course-img"
+                            alt="Web Design">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">PART A</span>
+                            <h5 class="card-title">Business Accounting</h5>
+                            <div class="d-flex align-items-center mb-2">
+                                <img src="online-course-5241968_1280.jpg" alt="Angela"
+                                    class="rounded-circle small-img me-2">
+                                <span>Angela • Development</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <span class="ms-1 text-muted">(15)</span>
+                                </div>
+                                <div>
+                                    <i class="far fa-clock me-1"></i>
+                                    <span>5h 35m</span>
+                                    <i class="far fa-bookmark ms-2 me-1"></i>
+                                    <span>17 Lessons</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center">
+                            <span class="fw-bold">$60</span>
+                            <button class="btn btn-outline-primary">Subsribe</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="assets/img/cgiz/Business Economics.jpg" class="card-img-top course-img"
+                            alt="Web Design">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">PART A</span>
+                            <h5 class="card-title">Business Economics</h5>
+                            <div class="d-flex align-items-center mb-2">
+                                <img src="online-course-5241968_1280.jpg" alt="Angela"
+                                    class="rounded-circle small-img me-2">
+                                <span>Angela • Development</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <span class="ms-1 text-muted">(15)</span>
+                                </div>
+                                <div>
+                                    <i class="far fa-clock me-1"></i>
+                                    <span>5h 35m</span>
+                                    <i class="far fa-bookmark ms-2 me-1"></i>
+                                    <span>17 Lessons</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center">
+                            <span class="fw-bold">$60</span>
+                            <button class="btn btn-outline-primary">Subsribe</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="assets/img/cgiz/Business Law.jpg" class="card-img-top  course-img"
+                            alt="React Learning">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">PART A</span>
+                            <h5 class="card-title">Business Law</h5>
+                            <div class="d-flex align-items-center mb-2">
+                                <img src="online-course-5241968_1280.jpg" class="rounded-circle me-2 small-img"
+                                    alt="Broughton">
+                                <span>Broughton • Languages</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <span class="ms-1 text-muted">(15)</span>
+                                </div>
+                                <div>
+                                    <i class="far fa-clock me-1"></i>
+                                    <span>4h 38m</span>
+                                    <i class="far fa-bookmark ms-2 me-1"></i>
+                                    <span>13 Lessons</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center">
+                            <span class="fw-bold">$80</span>
+                            <button class="btn btn-outline-primary">Subsribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="container mt-5">
+            <!--  <h2 class="mb-4 text-white">ACCA Skills Level</h2>
+            <p class="text-white mb-4">Explore our specially selected courses for a more tailored learning experience.
+            </p> -->
+
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="assets/img/cgiz/business communication & ethics.jpg" class="card-img-top course-img"
+                            alt="Featured Course 1">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">PART A</span>
+                            <h5 class="card-title">Business Communication & Ethics</h5>
+                            <div class="d-flex align-items-center mb-2">
+                                <img src="assets/img/corporate and business law.jpg" alt="Instructor"
+                                    class="rounded-circle me-2 small-img">
+                                <span>John Doe • Development</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <span class="ms-1 text-muted">(50)</span>
+                                </div>
+                                <div>
+                                    <i class="far fa-clock me-1"></i>
+                                    <span>4h 20m</span>
+                                    <i class="far fa-bookmark ms-2 me-1"></i>
+                                    <span>10 Lessons</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center">
+                            <span class="fw-bold">$70</span>
+                            <button class="btn btn-outline-primary">Subsribe</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="assets/img/cgiz/Human Resourses Management.jpg" class="card-img-top course-img"
+                            alt="Featured Course 2">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">PART A</span>
+                            <h5 class="card-title">Human Resourses Management</h5>
+                            <div class="d-flex align-items-center mb-2">
+                                <img src="" alt="Instructor" class="rounded-circle me-2 small-img">
+                                <span>Jane Smith • Design</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <span class="ms-1 text-muted">(30)</span>
+                                </div>
+                                <div>
+                                    <i class="far fa-clock me-1"></i>
+                                    <span>3h 10m</span>
+                                    <i class="far fa-bookmark ms-2 me-1"></i>
+                                    <span>8 Lessons</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center">
+                            <span class="fw-bold">$50</span>
+                            <button class="btn btn-outline-primary">Subsribe</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="assets/img/cgiz/Tax Law & Practice.jpg" class="card-img-top course-img"
+                            alt="Featured Course 3">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">PART B</span>
+                            <h5 class="card-title">Tax Law & Practice</h5>
+                            <div class="d-flex align-items-center mb-2">
+                                <img src="" alt="Instructor" class="rounded-circle me-2 small-img">
+                                <span>Emily Johnson • Programming</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <span class="ms-1 text-muted">(40)</span>
+                                </div>
+                                <div>
+                                    <i class="far fa-clock me-1"></i>
+                                    <span>6h 15m</span>
+                                    <i class="far fa-bookmark ms-2 me-1"></i>
+                                    <span>15 Lessons</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center">
+                            <span class="fw-bold">$80</span>
+                            <button class="btn btn-outline-primary">Subsribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row Number 2 Skills Level -->
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="assets/img/cgiz/Financial Accounting Reporting.jpg" class="card-img-top course-img"
+                            alt="Featured Course 1">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">PART B</span>
+                            <h5 class="card-title">Financial Accounting Reporting</h5>
+                            <div class="d-flex align-items-center mb-2">
+                                <img src="/placeholder.svg?height=30&width=30" alt="Instructor"
+                                    class="rounded-circle me-2 small-img">
+                                <span>John Doe • Development</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <span class="ms-1 text-muted">(50)</span>
+                                </div>
+                                <div>
+                                    <i class="far fa-clock me-1"></i>
+                                    <span>4h 20m</span>
+                                    <i class="far fa-bookmark ms-2 me-1"></i>
+                                    <span>10 Lessons</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center">
+                            <span class="fw-bold">$70</span>
+                            <button class="btn btn-outline-primary">Subsribe</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="assets/img/cgiz/Audit & Assurance.jpg" class="card-img-top course-img"
+                            alt="Featured Course 2">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">PART B</span>
+                            <h5 class="card-title">Auditing</h5>
+                            <div class="d-flex align-items-center mb-2">
+                                <img src="/placeholder.svg?height=30&width=30" alt="Instructor"
+                                    class="rounded-circle me-2 small-img">
+                                <span>Jane Smith • Design</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <span class="ms-1 text-muted">(30)</span>
+                                </div>
+                                <div>
+                                    <i class="far fa-clock me-1"></i>
+                                    <span>3h 10m</span>
+                                    <i class="far fa-bookmark ms-2 me-1"></i>
+                                    <span>8 Lessons</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center">
+                            <span class="fw-bold">$50</span>
+                            <button class="btn btn-outline-primary">Subsribe</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="assets/img/cgiz/Corporate Law.jpg" class="card-img-top course-img"
+                            alt="Featured Course 3">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">PART C</span>
+                            <h5 class="card-title">Corporate Law</h5>
+                            <div class="d-flex align-items-center mb-2">
+                                <img src="/placeholder.svg?height=30&width=30" alt="Instructor"
+                                    class="rounded-circle me-2 small-img">
+                                <span>Emily Johnson • Programming</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <span class="ms-1 text-muted">(40)</span>
+                                </div>
+                                <div>
+                                    <i class="far fa-clock me-1"></i>
+                                    <span>6h 15m</span>
+                                    <i class="far fa-bookmark ms-2 me-1"></i>
+                                    <span>15 Lessons</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center">
+                            <span class="fw-bold">$80</span>
+                            <button class="btn btn-outline-primary">Subsribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section>
+        <div class="container mt-5">
+            <!--   <h2 class="mb-4 text-white">ACCA Professional Level</h2>
+            <p class="text-white mb-4">Explore our specially selected courses for a more tailored learning experience.
+            </p> -->
+
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="assets/img/cgiz/Advanced Acc & Financial Reporting.jpg"
+                            class="card-img-top course-img" alt="Featured Course 1">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">PART C</span>
+                            <h5 class="card-title">Advanced Acc & Financial Reporting
+                            </h5>
+                            <div class="d-flex align-items-center mb-2">
+                                <img src="/placeholder.svg?height=30&width=30" alt="Instructor"
+                                    class="rounded-circle me-2 small-img">
+                                <span>John Doe • Development</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <span class="ms-1 text-muted">(50)</span>
+                                </div>
+                                <div>
+                                    <i class="far fa-clock me-1"></i>
+                                    <span>4h 20m</span>
+                                    <i class="far fa-bookmark ms-2 me-1"></i>
+                                    <span>10 Lessons</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center">
+                            <span class="fw-bold">$70</span>
+                            <button class="btn btn-outline-primary">Subsribe</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="assets/img/cgiz/Development of Stratigies.jpg" class="card-img-top course-img"
+                            alt="Featured Course 2">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">PART C</span>
+                            <h5 class="card-title">Development of Stratigies</h5>
+                            <div class="d-flex align-items-center mb-2">
+                                <img src="/placeholder.svg?height=30&width=30" alt="Instructor"
+                                    class="rounded-circle me-2 small-img">
+                                <span>Jane Smith • Design</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <span class="ms-1 text-muted">(30)</span>
+                                </div>
+                                <div>
+                                    <i class="far fa-clock me-1"></i>
+                                    <span>3h 10m</span>
+                                    <i class="far fa-bookmark ms-2 me-1"></i>
+                                    <span>8 Lessons</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center">
+                            <span class="fw-bold">$50</span>
+                            <button class="btn btn-outline-primary">Subsribe</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="assets/img/cgiz/Cost & Management Accounting.jpg" class="card-img-top course-img"
+                            alt="Featured Course 3">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">PART C</span>
+                            <h5 class="card-title">Cost & Management Accounting</h5>
+                            <div class="d-flex align-items-center mb-2">
+                                <img src="/placeholder.svg?height=30&width=30" alt="Instructor"
+                                    class="rounded-circle me-2 small-img">
+                                <span>Emily Johnson • Programming</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <span class="ms-1 text-muted">(40)</span>
+                                </div>
+                                <div>
+                                    <i class="far fa-clock me-1"></i>
+                                    <span>6h 15m</span>
+                                    <i class="far fa-bookmark ms-2 me-1"></i>
+                                    <span>15 Lessons</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center">
+                            <span class="fw-bold">$80</span>
+                            <button class="btn btn-outline-primary">Subsribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row Number 2 Proffesional Level -->
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="assets/img/cgiz/Corporate Financial Management.jpg" class="card-img-top course-img"
+                            alt="Featured Course 1">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">PART C</span>
+                            <h5 class="card-title">Corporate Financial Management
+                            </h5>
+                            <div class="d-flex align-items-center mb-2">
+                                <img src="/placeholder.svg?height=30&width=30" alt="Instructor"
+                                    class="rounded-circle me-2 small-img">
+                                <span>John Doe • Development</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <span class="ms-1 text-muted">(50)</span>
+                                </div>
+                                <div>
+                                    <i class="far fa-clock me-1"></i>
+                                    <span>4h 20m</span>
+                                    <i class="far fa-bookmark ms-2 me-1"></i>
+                                    <span>10 Lessons</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center">
+                            <span class="fw-bold">$70</span>
+                            <button class="btn btn-outline-primary">Subsribe</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="assets/img/cgiz/Audit & Assurance.jpg" class="card-img-top course-img"
+                            alt="Featured Course 2">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">PART D</span>
+                            <h5 class="card-title">Audit & Assurance</h5>
+                            <div class="d-flex align-items-center mb-2">
+                                <img src="/placeholder.svg?height=30&width=30" alt="Instructor"
+                                    class="rounded-circle me-2 small-img">
+                                <span>Jane Smith • Design</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <span class="ms-1 text-muted">(30)</span>
+                                </div>
+                                <div>
+                                    <i class="far fa-clock me-1"></i>
+                                    <span>3h 10m</span>
+                                    <i class="far fa-bookmark ms-2 me-1"></i>
+                                    <span>8 Lessons</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center">
+                            <span class="fw-bold">$50</span>
+                            <button class="btn btn-outline-primary">Subsribe</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="assets/img/cgiz/Public Financial Management.jpg" class="card-img-top course-img"
+                            alt="Featured Course 3">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">PART D</span>
+                            <h5 class="card-title">Public Financial Management</h5>
+                            <div class="d-flex align-items-center mb-2">
+                                <img src="/placeholder.svg?height=30&width=30" alt="Instructor"
+                                    class="rounded-circle me-2 small-img">
+                                <span>Emily Johnson • Programming</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <span class="ms-1 text-muted">(40)</span>
+                                </div>
+                                <div>
+                                    <i class="far fa-clock me-1"></i>
+                                    <span>6h 15m</span>
+                                    <i class="far fa-bookmark ms-2 me-1"></i>
+                                    <span>15 Lessons</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center">
+                            <span class="fw-bold">$80</span>
+                            <button class="btn btn-outline-primary">Subsribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Row Number 2 Proffesional Level -->
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="assets/img/cgiz/Corporate Secreterial Practice.jpg" class="card-img-top course-img"
+                            alt="Featured Course 1">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">PART D</span>
+                            <h5 class="card-title">Corporate Secreterial Practice
+                            </h5>
+                            <div class="d-flex align-items-center mb-2">
+                                <img src="/placeholder.svg?height=30&width=30" alt="Instructor"
+                                    class="rounded-circle me-2 small-img">
+                                <span>John Doe • Development</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <span class="ms-1 text-muted">(50)</span>
+                                </div>
+                                <div>
+                                    <i class="far fa-clock me-1"></i>
+                                    <span>4h 20m</span>
+                                    <i class="far fa-bookmark ms-2 me-1"></i>
+                                    <span>10 Lessons</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center">
+                            <span class="fw-bold">$70</span>
+                            <button class="btn btn-outline-primary">Subsribe</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="assets/img/cgiz/Applied Governance, Risk & Complient.jpg"
+                            class="card-img-top course-img" alt="Featured Course 2">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">PART D</span>
+                            <h5 class="card-title">Applied Governance, Risk & Complient</h5>
+                            <div class="d-flex align-items-center mb-2">
+                                <img src="/placeholder.svg?height=30&width=30" alt="Instructor"
+                                    class="rounded-circle me-2 small-img">
+                                <span>Jane Smith • Design</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <span class="ms-1 text-muted">(30)</span>
+                                </div>
+                                <div>
+                                    <i class="far fa-clock me-1"></i>
+                                    <span>3h 10m</span>
+                                    <i class="far fa-bookmark ms-2 me-1"></i>
+                                    <span>8 Lessons</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center">
+                            <span class="fw-bold">$50</span>
+                            <button class="btn btn-outline-primary ">Subsribe</button>
+                        </div>
+                    </div>
+                </div>
+                <!--  <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="assets/img/Audit and Assurance.jpg" class="card-img-top course-img"
+                            alt="Featured Course 3">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">PART D</span>
+                            <h5 class="card-title">Public Financial Management</h5>
+                            <div class="d-flex align-items-center mb-2">
+                                <img src="/placeholder.svg?height=30&width=30" alt="Instructor"
+                                    class="rounded-circle me-2 small-img">
+                                <span>Emily Johnson • Programming</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <span class="ms-1 text-muted">(40)</span>
+                                </div>
+                                <div>
+                                    <i class="far fa-clock me-1"></i>
+                                    <span>6h 15m</span>
+                                    <i class="far fa-bookmark ms-2 me-1"></i>
+                                    <span>15 Lessons</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center">
+                            <span class="fw-bold">$80</span>
+                            <button class="btn btn-outline-primary">Subsribe</button>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
